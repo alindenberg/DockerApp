@@ -1,0 +1,25 @@
+{
+  "name": "dockerapp",
+  "version": "1.0.0",
+  "description": "Sample app to play with Docker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alindenberg/DockerApp.git"
+  },
+  "author": "Austin Lindenberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alindenberg/DockerApp/issues"
+  },
+  "homepage": "https://github.com/alindenberg/DockerApp#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.3"
+  }
+}
