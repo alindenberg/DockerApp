@@ -15,12 +15,15 @@ mongo.MongoClient.connect('mongodb://mongo:27017', { useNewUrlParser: true }, (e
   collection = client.db('dockerapp').collection('test')
 })
 
-
-app.get('/', (req, res) => res.send('Hello World!'))
-
 app.post('/posts', async (req, res) => {
-  const post = req.body
-  await collection.insertOne(post)
+  const post = req.body.post
+  if (!post) {
+    res.status(400).send({ 'error': 'Body didnt have `post` attribute' })
+  }
+  const data = {
+    data: post
+  }
+  await collection.insertOne(data)
   res.send('Entered post!')
 })
 
